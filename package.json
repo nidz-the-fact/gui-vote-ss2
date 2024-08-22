@@ -1,0 +1,61 @@
+{
+  "name": "gui-vote-ss2",
+  "version": "1.0.0",
+  "description": "Transparent and auditable open source GUI desktop.",
+  "author": "@nidz-the-fact",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "build": "electron-builder",
+    "make": "electron-forge make",
+    "package": "electron-forge package"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "ethers": "^6.13.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^32.0.1"
+  },
+  "build": {
+    "appId": "GUI Vote ss2",
+    "productName": "GUI Vote ss2",
+    "files": [
+      "main.js",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "icon": "src/assets/icon.png",
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  }
+}
